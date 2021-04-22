@@ -1,0 +1,25 @@
+---
+Server:
+  RunMode: debug #release
+  HttpPort: 8080
+  ReadTimeout: 60
+  WriteTimeout: 60
+  HandleMethodNotAllowed: true
+App:
+  DefaultPageSize: 10
+  MaxPageSize: 100
+  LogSavePath: storage/logs
+  LogFileName: app
+  LogFileExt: .log
+Database:
+  DBType: mysql
+  UserName: kh
+  Password: 1234
+  Host: 127.0.0.1:3306
+  DBName: gin_blog
+  TablePrefix: blog_
+  Charset: utf8mb4
+  ParseTime: True
+  MaxIdleConns: 10
+  MaxOpenConns: 30
+...
