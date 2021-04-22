@@ -1,13 +1,13 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/okh8609/gin_blog/global"
+	"github.com/okh8609/gin_blog/internal/model"
 	"github.com/okh8609/gin_blog/internal/routers"
 	"github.com/okh8609/gin_blog/pkg/setting"
 )
@@ -16,6 +16,10 @@ func init() {
 	err := setupSetting()
 	if err != nil {
 		log.Fatalf("init.setupSetting err: %v", err)
+	}
+	err = setupDBEngine()
+	if err != nil {
+		log.Fatalf("init.setupDBEngine err: %v", err)
 	}
 }
 
@@ -50,13 +54,11 @@ func setupSetting() error {
 	}
 
 	err = setting.ReadSection("Database", &global.Database)
-	if err != nil {
-		return err
-	}
+	return err
+}
 
-	// fmt.Println(global.Server)
-	// fmt.Println(global.App)
-	// fmt.Println(global.Database)
-
-	return nil
+func setupDBEngine() error {
+	var err error
+	global.DBEngine, err = model.NewDBEngine(global.Database)
+	return err
 }
