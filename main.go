@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"log"
 	"net/http"
 	"time"
@@ -9,7 +10,9 @@ import (
 	"github.com/okh8609/gin_blog/global"
 	"github.com/okh8609/gin_blog/internal/model"
 	"github.com/okh8609/gin_blog/internal/routers"
+	"github.com/okh8609/gin_blog/pkg/logger"
 	"github.com/okh8609/gin_blog/pkg/setting"
+	"gopkg.in/natefinch/lumberjack.v2"
 )
 
 func init() {
@@ -21,9 +24,14 @@ func init() {
 	if err != nil {
 		log.Fatalf("init.setupDBEngine err: %v", err)
 	}
+	err = setupLogger()
+	if err != nil {
+		log.Fatalf("init.setupLogger err: %v", err)
+	}
 }
 
 func main() {
+	global.MyLogger.Infof(context.Background() ,"%s: okh8609/%s","Khaos","gin_blog")
 	gin.SetMode(global.Server.RunMode)
 	engin := routers.NewRouter()
 	engin.HandleMethodNotAllowed = global.Server.HandleMethodNotAllowed
@@ -61,4 +69,19 @@ func setupDBEngine() error {
 	var err error
 	global.DBEngine, err = model.NewDBEngine(global.Database)
 	return err
+}
+
+func setupLogger() error {
+	path := global.App.LogSavePath + "/" + global.App.LogFileName + global.App.LogFileExt
+
+	global.MyLogger = logger.NewLogger(&lumberjack.Logger{
+		Filename:   path,
+		MaxSize:    500, // MB
+		MaxAge:     28, // Days
+		MaxBackups: 3,
+		LocalTime:  true,
+		Compress:   false, // disabled by default
+	}, "", log.LstdFlags).WithCaller(2)
+
+	return nil
 }
