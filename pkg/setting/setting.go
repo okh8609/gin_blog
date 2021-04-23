@@ -9,6 +9,8 @@ type Setting struct {
 func NewSetting() (*Setting, error) {
 	v := viper.New()
 	v.AddConfigPath("configs/")
+	v.AddConfigPath("../configs/")
+	v.AddConfigPath("../../configs/")
 	v.SetConfigName("config")
 	v.SetConfigType("yaml")
 
@@ -23,4 +25,3 @@ func (s *Setting) ReadSection(k string, v interface{}) error {
 	err := s.vp.UnmarshalKey(k, v) // unmarshaling to a struct
 	return err
 }
-

@@ -9,6 +9,6 @@ type BlogArticleTag struct {
 }
 
 // TableName get sql table name.获取数据库表名
-func (m *BlogArticleTag) TableName() string {
+func (m BlogArticleTag) TableName() string {
 	return "blog_article_tag"
 }

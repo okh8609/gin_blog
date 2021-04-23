@@ -19,7 +19,7 @@ func NewDBEngine(c *setting.DatabaseSetting) (*gorm.DB, error) {
 		c.ParseTime,
 	)
 
-	sqlDB, err := sql.Open(c.DBName, conn_str)
+	sqlDB, err := sql.Open(c.DBType, conn_str)
 	if err != nil {
 		return nil, err
 	}
