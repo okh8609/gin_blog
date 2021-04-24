@@ -189,3 +189,20 @@
 2021/04/24 18:19:54 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"validation.BindAndValid err: Key: 'GetTagsParam.Name' Error:Field validation for 'Name' failed on the 'max' tag, Key: 'GetTagsParam.State' Error:Field validation for 'State' failed on the 'oneof' tag","time":1619259594171509622}
 2021/04/25 00:10:00 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619280600641473521}
 2021/04/25 00:10:13 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619280613658630440}
+2021/04/25 00:22:25 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619281345026127916}
+2021/04/25 00:24:46 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"app.BindAndValid errs: Key: 'CreateTagParam.CreatedBy' Error:Field validation for 'CreatedBy' failed on the 'required' tag","time":1619281486855742148}
+2021/04/25 00:34:45 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619282085888443950}
+2021/04/25 00:38:13 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619282293893615237}
+2021/04/25 00:42:05 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619282525227752807}
+2021/04/25 00:43:04 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619282584115227735}
+2021/04/25 00:43:11 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"svc.CountTag err: unsupported data type: 0xc00042eb70: Table not set, please set it like: db.Model(\u0026user) or db.Table(\"users\")","time":1619282591727966692}
+2021/04/25 00:44:46 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"svc.CountTag err: unsupported data type: 0xc00042f090: Table not set, please set it like: db.Model(\u0026user) or db.Table(\"users\")","time":1619282686524162431}
+2021/04/25 00:47:44 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619282864910829813}
+2021/04/25 00:47:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"svc.CountTag err: unsupported data type: 0xc000432f10: Table not set, please set it like: db.Model(\u0026user) or db.Table(\"users\")","time":1619282873709695611}
+2021/04/25 00:48:43 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619282923830414662}
+2021/04/25 00:49:34 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619282974392026386}
+2021/04/25 00:50:10 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619283010568722271}
+2021/04/25 00:50:49 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619283049171649706}
+2021/04/25 00:52:37 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619283157406259626}
+2021/04/25 00:55:27 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"app.BindAndValid errs: ","time":1619283327711575727}
+2021/04/25 00:59:32 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619283572248527354}

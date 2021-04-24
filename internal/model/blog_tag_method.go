@@ -3,7 +3,7 @@ package model
 import "gorm.io/gorm"
 
 func (t BlogTag) Count(db *gorm.DB) (int64, error) {
-	db.Model(&BlogTag{})
+	db = db.Model(&BlogTag{})
 
 	if t.Name != "" {
 		db = db.Where("name = ?", t.Name)
