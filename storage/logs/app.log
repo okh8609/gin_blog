@@ -7,3 +7,10 @@
 2021/04/24 00:17:17 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619194637911346512}
 2021/04/24 00:22:39 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619194959801604571}
 2021/04/24 00:24:01 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619195041114283424}
+2021/04/24 10:03:25 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619229805046644400}
+2021/04/24 11:30:55 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619235055606597385}
+2021/04/24 11:31:08 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619235068713975461}
+2021/04/24 11:45:01 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619235901209714838}
+2021/04/24 11:45:09 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619235909771228905}
+2021/04/24 11:53:21 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619236401666944287}
+2021/04/24 13:28:19 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619242099846237687}
