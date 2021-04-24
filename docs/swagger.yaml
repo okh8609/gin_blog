@@ -130,12 +130,12 @@ paths:
       summary: 取得多篇文章
     post:
       parameters:
-      - description: 文章ID
+      - description: 標籤ID
         in: body
         name: tag_id
         required: true
         schema:
-          type: string
+          type: integer
       - description: 文章標題
         in: body
         name: title
@@ -164,7 +164,7 @@ paths:
         name: created_by
         required: true
         schema:
-          type: integer
+          type: string
       - description: 狀態
         in: body
         name: state
@@ -239,7 +239,7 @@ paths:
         in: body
         name: tag_id
         schema:
-          type: string
+          type: integer
       - description: 文章標題
         in: body
         name: title

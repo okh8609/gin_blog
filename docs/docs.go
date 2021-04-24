@@ -93,12 +93,12 @@ var doc = `{
                 "summary": "創建文章",
                 "parameters": [
                     {
-                        "description": "文章ID",
+                        "description": "標籤ID",
                         "name": "tag_id",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "integer"
                         }
                     },
                     {
@@ -142,7 +142,7 @@ var doc = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "integer"
+                            "type": "string"
                         }
                     },
                     {
@@ -223,7 +223,7 @@ var doc = `{
                         "name": "tag_id",
                         "in": "body",
                         "schema": {
-                            "type": "string"
+                            "type": "integer"
                         }
                     },
                     {
