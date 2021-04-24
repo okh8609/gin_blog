@@ -1,16 +1,16 @@
 package service
 
-type GetArticleRequest struct {
+type GetArticleParam struct {
 	ID    uint32 `form:"id" binding:"required,gte=1"`
 	State uint8  `form:"state,default=1" binding:"oneof=0 1"`
 }
 
-type GetArticleListRequest struct {
+type GetArticleListParam struct {
 	TagID uint32 `form:"tag_id" binding:"gte=1"`
 	State uint8  `form:"state,default=1" binding:"oneof=0 1"`
 }
 
-type CreateArticleRequest struct {
+type CreateArticleParam struct {
 	TagID         uint32 `form:"tag_id" binding:"required,gte=1"`
 	Title         string `form:"title" binding:"required,min=2,max=100"`
 	Desc          string `form:"desc" binding:"required,min=2,max=255"`
@@ -20,7 +20,7 @@ type CreateArticleRequest struct {
 	State         uint8  `form:"state,default=1" binding:"oneof=0 1"`
 }
 
-type UpdateArticleRequest struct {
+type UpdateArticleParam struct {
 	ID            uint32 `form:"id" binding:"required,gte=1"`
 	TagID         uint32 `form:"tag_id" binding:"required,gte=1"`
 	Title         string `form:"title" binding:"min=2,max=100"`
@@ -31,6 +31,6 @@ type UpdateArticleRequest struct {
 	State         uint8  `form:"state,default=1" binding:"oneof=0 1"`
 }
 
-type DeleteArticleRequest struct {
+type DeleteArticleParam struct {
 	ID uint32 `form:"id" binding:"required,gte=1"`
 }

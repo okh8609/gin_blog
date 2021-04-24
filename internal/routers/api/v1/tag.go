@@ -31,17 +31,18 @@ func (t *Tag) Get(c *gin.Context) {}
 func (t *Tag) List(c *gin.Context) {
 
 	//region --- validation.BindAndValid test ---
-	param := service.GetTagsRequest{}
+	param := service.GetTagsParam{}
 	ok, es := validation.BindAndValid(c, &param)
 	if !ok {
 		global.MyLogger.Errorf(c, "validation.BindAndValid err: %v", es)
-		error_response := errcode.InvalidParams.WithDetails(es.Errors()...)
-		response := gin.H{"code": error_response.ErrCode, "msg": error_response.GetMsg()}
-		details := error_response.GetDetails()
+
+		ers := errcode.InvalidParams.WithDetails(es.Errors()...)
+		response := gin.H{"code": ers.ErrCode, "msg": ers.GetMsg()}
+		details := ers.GetDetails()
 		if len(details) > 0 {
 			response["details"] = details
 		}
-		c.JSON(error_response.GetHttpStatusCode(), response)
+		c.JSON(ers.GetHttpStatusCode(), response)
 		return
 	}
 	c.JSON(http.StatusOK, gin.H{})

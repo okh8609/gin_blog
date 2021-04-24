@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/okh8609/gin_blog/internal/middleware"
+	// "github.com/okh8609/gin_blog/internal/middleware"
 	v1 "github.com/okh8609/gin_blog/internal/routers/api/v1"
 
 	_ "github.com/okh8609/gin_blog/docs"
@@ -13,7 +13,7 @@ import (
 func NewRouter() *gin.Engine {
 	engine := gin.New()
 	engine.Use(gin.Logger(), gin.Recovery())
-	engine.Use(middleware.TranslationMiddleware)
+	// engine.Use(middleware.TranslationMiddleware)
 
 	url := ginSwagger.URL("http://kh-vm20:8080/swagger/doc.json") // The url pointing to API definition
 	engine.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))

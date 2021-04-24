@@ -21,7 +21,7 @@ import (
 func TranslationMiddleware(c *gin.Context) {
 	// 根據c的locale資訊  產生翻譯成locale語言的翻譯器
 	locale := c.GetHeader("locale")
-	global.MyLogger.Debugf(c, "#c.GetHeader(\"locale\"): %v.",locale) // debug logging
+	global.MyLogger.Debugf(c, "#c.GetHeader(\"locale\"): %v.", locale) // debug logging
 	ut2 := ut.New(en.New(), zh.New())
 	trans, _ := ut2.GetTranslator(locale)
 

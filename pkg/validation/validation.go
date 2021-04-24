@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
+	"github.com/go-playground/locales/en"
 	ut "github.com/go-playground/universal-translator"
 	"github.com/go-playground/validator/v10"
 )
@@ -42,14 +43,17 @@ func BindAndValid(c *gin.Context, v interface{}) (bool, ValidationErrors) {
 	e := c.ShouldBind(v) // 進行參數綁定和參數驗證
 	if e != nil {
 		var es ValidationErrors
-
+		// fmt.Printf("#> %v", e)
 		ves, ok := e.(validator.ValidationErrors)
 		if !ok {
 			return false, es // 空的
 		}
 
-		trans, _ := (c.Value("trans")).(ut.Translator)
+		ut2 := ut.New(en.New())
+		trans, _ := ut2.GetTranslator("")
+		// trans, _ := (c.Value("trans")).(ut.Translator)
 		for k, m := range ves.Translate(trans) {
+			// fmt.Printf("#> k=%v, m=%v.\n", k, m)
 			es = append(es, &ValidationError{
 				Key: k,
 				Msg: m,
