@@ -2,7 +2,7 @@ package model
 
 // BlogArticle 文章管理
 type BlogArticle struct {
-	*BasicInfo
+	*BlogBasicInfo
 	Title         string `json:"title"`           // 文章標題
 	Desc          string `json:"desc"`            // 文章簡述
 	Content       string `json:"content"`         // 文章內容

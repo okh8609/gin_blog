@@ -2,7 +2,7 @@ package model
 
 // BlogArticleTag 文章標籤關聯
 type BlogArticleTag struct {
-	*BasicInfo
+	*BlogBasicInfo
 	TagID     uint `json:"tab_id"`     // 標籤ID
 	ArticleID uint `json:"article_id"` // 文章ID
 

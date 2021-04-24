@@ -1,6 +1,6 @@
 package model
 
-type BasicInfo struct {
+type BlogBasicInfo struct {
 	ID         uint32 `gorm:"primary_key" json:"id"`
 	CreatedBy  string `json:"created_by"`  // 創建人
 	ModifiedBy string `json:"modified_by"` // 修改人
