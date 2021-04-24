@@ -15,12 +15,12 @@ func StrMust2Int(str string) int {
 	return v
 }
 
-func Str2UInt(str string) (uint, error) {
+func Str2UInt(str string) (uint32, error) {
 	u64, err := strconv.ParseUint(str, 10, 32)
-	return uint(u64), err
+	return uint32(u64), err
 }
 
-func StrMust2UInt(str string) uint {
+func StrMust2UInt(str string) uint32 {
 	v, err := Str2UInt(str)
 	if err != nil {
 		panic(err)
