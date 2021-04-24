@@ -1,11 +1,10 @@
 package v1
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
 	"github.com/okh8609/gin_blog/global"
 	"github.com/okh8609/gin_blog/internal/service"
+	"github.com/okh8609/gin_blog/pkg/app"
 	"github.com/okh8609/gin_blog/pkg/errcode"
 	"github.com/okh8609/gin_blog/pkg/validation"
 )
@@ -32,20 +31,15 @@ func (t *Tag) List(c *gin.Context) {
 
 	//region --- validation.BindAndValid test ---
 	param := service.GetTagsParam{}
-	ok, es := validation.BindAndValid(c, &param)
+	ok, verrs := validation.BindAndValid(c, &param)
+	rr := app.NewGResponse(c)
 	if !ok {
-		global.MyLogger.Errorf(c, "validation.BindAndValid err: %v", es)
-
-		ers := errcode.InvalidParams.WithDetails(es.Errors()...)
-		response := gin.H{"code": ers.ErrCode, "msg": ers.GetMsg()}
-		details := ers.GetDetails()
-		if len(details) > 0 {
-			response["details"] = details
-		}
-		c.JSON(ers.GetHttpStatusCode(), response)
-		return
+		global.MyLogger.Errorf(c, "validation.BindAndValid err: %v", verrs.Error())
+		e := errcode.InvalidParams.WithDetails(verrs.Errors()...)
+		rr.SendErrResponse(e)
+	} else {
+		rr.SendOkResponse(nil)
 	}
-	c.JSON(http.StatusOK, gin.H{})
 	//endregion --- validation.BindAndValid test ---
 
 }
