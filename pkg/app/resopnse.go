@@ -32,3 +32,14 @@ func (r *GResponse) SendErrResponse(e *errcode.Error) {
 	}
 	r.gc.JSON(e.GetHttpStatusCode(), response)
 }
+
+func (r *GResponse) SendOkResponseList(list interface{}, totalRows int64) {
+	r.gc.JSON(http.StatusOK, gin.H{
+		"list": list,
+		"pager": Pager{
+			Page:      GetPage(r.gc),
+			PageSize:  GetPageSize(r.gc),
+			TotalRows: totalRows,
+		},
+	})
+}
