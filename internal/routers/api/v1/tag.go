@@ -1,6 +1,14 @@
 package v1
 
-import "github.com/gin-gonic/gin"
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+	"github.com/okh8609/gin_blog/global"
+	"github.com/okh8609/gin_blog/internal/service"
+	"github.com/okh8609/gin_blog/pkg/errcode"
+	"github.com/okh8609/gin_blog/pkg/validation"
+)
 
 type Tag struct{}
 
@@ -20,7 +28,26 @@ func (t *Tag) Get(c *gin.Context) {}
 // @Failure 400 {object} errcode.Error "請求錯誤"
 // @Failure 500 {object} errcode.Error "內部錯誤"
 // @Router /api/v1/tags [get]
-func (t *Tag) List(c *gin.Context) {}
+func (t *Tag) List(c *gin.Context) {
+
+	//region --- validation.BindAndValid test ---
+	param := service.GetTagsRequest{}
+	ok, es := validation.BindAndValid(c, &param)
+	if !ok {
+		global.MyLogger.Errorf(c, "validation.BindAndValid err: %v", es)
+		error_response := errcode.InvalidParams.WithDetails(es.Errors()...)
+		response := gin.H{"code": error_response.ErrCode, "msg": error_response.GetMsg()}
+		details := error_response.GetDetails()
+		if len(details) > 0 {
+			response["details"] = details
+		}
+		c.JSON(error_response.GetHttpStatusCode(), response)
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{})
+	//endregion --- validation.BindAndValid test ---
+
+}
 
 // @Summary 新增標籤
 // @Produce  json

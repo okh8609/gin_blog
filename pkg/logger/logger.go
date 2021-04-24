@@ -111,6 +111,7 @@ func (l *MyLogger) WithCallerFrame() *MyLogger {
 }
 
 func (l *MyLogger) WithGinContext() *MyLogger {
+	return l // ?
 	// 加入 *gin.Context 的資訊
 	ginContext, ok := l.contex.(*gin.Context) // 型態轉換(Type assertions)成 *gin.Context
 	if ok {                                   // 看看轉換有沒有成功
