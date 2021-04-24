@@ -30,8 +30,14 @@ func init() {
 	}
 }
 
+// @title 部落格後端系統
+// @version 1.0
+// @description 再強一點：用Go語言完成六個大型專案
+// @termsOfService https://github.com/okh8609/gin_blog
+// @contact.name Khaos_Ou
+// @host localhost:8080
 func main() {
-	global.MyLogger.Infof(context.Background() ,"%s: okh8609/%s","Khaos","gin_blog")
+	global.MyLogger.Infof(context.Background(), "%s: okh8609/%s", "Khaos", "gin_blog")
 	gin.SetMode(global.Server.RunMode)
 	engin := routers.NewRouter()
 	engin.HandleMethodNotAllowed = global.Server.HandleMethodNotAllowed
@@ -77,7 +83,7 @@ func setupLogger() error {
 	global.MyLogger = logger.NewLogger(&lumberjack.Logger{
 		Filename:   path,
 		MaxSize:    500, // MB
-		MaxAge:     28, // Days
+		MaxAge:     28,  // Days
 		MaxBackups: 3,
 		LocalTime:  true,
 		Compress:   false, // disabled by default
