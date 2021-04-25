@@ -45,3 +45,11 @@ CREATE TABLE `blog_article_tag` (
     FOREIGN KEY (`article_id`) REFERENCES `blog_article` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
     FOREIGN KEY (`tag_id`) REFERENCES `blog_tag` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COMMENT = '文章標籤關聯';
+
+-- 這裡把UUID作為KEY，效能會很差；
+-- 可以另外放一個 AUTO_INCREMENT 的`id`當key，再寫 Stored Procedures(?) CREATE FUNCTION(?) 去保持他的唯一性
+CREATE TABLE `auth` (
+    `uuid` VARCHAR(255) NOT NULL COMMENT 'UUID或帳號',
+    `password` VARCHAR(255) NOT NULL COMMENT '密碼',
+    PRIMARY KEY (`uuid`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COMMENT = '帳戶認證資訊';

@@ -5,7 +5,7 @@ var (
 	ServerError               = NewError(10000000, "服務內部錯誤")
 	InvalidParams             = NewError(10000001, "導入參數錯誤")
 	NotFound                  = NewError(10000002, "找不到")
-	UnauthorizedAuthNotExist  = NewError(10000003, "驗證失敗，找不到對應的AppKey和AppSecret")
+	UnauthorizedAuthNotExist  = NewError(10000003, "驗證失敗，ID或密碼錯誤")
 	UnauthorizedTokenError    = NewError(10000004, "驗證失敗，Token錯誤")
 	UnauthorizedTokenTimeout  = NewError(10000005, "驗證失敗，Token超時")
 	UnauthorizedTokenGenerate = NewError(10000006, "驗證失敗，Token生成失敗")
@@ -27,4 +27,9 @@ var (
 	ErrorDeleteArticleFail = NewError(20020005, "刪除文章失敗")
 
 	ErrorUploadFileFail = NewError(20030001, "上傳文件失敗")
+
+	ErrorGetAuthFail    = NewError(20040001, "取得帳戶失敗")
+	ErrorCreateAuthFail = NewError(20040002, "創建帳戶失敗")
+	ErrorUpdateAuthFail = NewError(20040003, "更新帳戶失敗")
+	ErrorDeleteAuthFail = NewError(20040004, "刪除帳戶失敗")
 )

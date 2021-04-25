@@ -43,5 +43,10 @@ func NewRouter() *gin.Engine {
 	engine.POST("/upload/file", api.UploadFile)
 	engine.StaticFS(upload.GetServerUrl(), http.Dir(global.App.UploadSavePath))
 
+	engine.POST("/auth/new", api.CreateAuth)
+	engine.POST("/auth/verify", api.VerifyAuth)
+	engine.PUT("/auth", api.UpdateAuth)
+	engine.DELETE("/auth", api.DeleteAuth)
+
 	return engine
 }

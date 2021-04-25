@@ -50,4 +50,5 @@ type Auth struct {
 	JWTkey     string `yaml:"JWTkey"`
 	JWTiss     string `yaml:"JWTiss"`
 	JWTexp     int    `yaml:"JWTexp"` 
+	PBKDF2salt string `yaml:"PBKDF2salt"`
 }
