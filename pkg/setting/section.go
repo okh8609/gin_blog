@@ -44,3 +44,10 @@ type DatabaseSetting struct {
 	MaxIdleConns int    `yaml:"MaxIdleConns"`
 	MaxOpenConns int    `yaml:"MaxOpenConns"`
 }
+
+// Auth
+type Auth struct {
+	JWTkey     string `yaml:"JWTkey"`
+	JWTiss     string `yaml:"JWTiss"`
+	JWTexp     int    `yaml:"JWTexp"` 
+}

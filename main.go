@@ -68,6 +68,15 @@ func setupSetting() error {
 	}
 
 	err = setting.ReadSection("Database", &global.Database)
+	if err != nil {
+		return err
+	}
+
+	err = setting.ReadSection("Auth", &global.Auth)
+	if err != nil {
+		return err
+	}
+
 	return err
 }
 

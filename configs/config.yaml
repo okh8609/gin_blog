@@ -40,4 +40,8 @@ Database:
   ParseTime: True
   MaxIdleConns: 10
   MaxOpenConns: 30
+Auth:
+  JWTkey: 2M4o6UNzYD1qSCL1OXzskkusH3QIYyV1
+  JWTiss: khaos
+  JWTexp: 600000 # 大約七天
 ...

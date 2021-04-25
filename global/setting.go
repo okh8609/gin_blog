@@ -6,4 +6,5 @@ var (
 	Server   *setting.ServerSetting
 	App      *setting.AppSetting
 	Database *setting.DatabaseSetting
+	Auth     *setting.Auth
 )
