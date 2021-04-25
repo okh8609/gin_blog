@@ -17,21 +17,21 @@ func (s *Service) UploadFile(file multipart.File, fileHeader *multipart.FileHead
 	fileName := upload.GetFileName(fileHeader.Filename) // {MD5_hash}.xxx
 
 	if upload.CheckExt(fileName, fileType) == false {
-		return nil, errors.New("file extension not supported.")
+		return nil, errors.New("file extension not supported")
 	}
 
 	if upload.CheckMaxSize(fileHeader, fileType) == false {
-		return nil, errors.New("exceeded maximum file limit.")
+		return nil, errors.New("exceeded maximum file limit")
 	}
 
 	uploadSavePath := upload.GetSavePath()
 	if upload.CheckSavePath(uploadSavePath) {
 		if err := upload.CreateSavePath(uploadSavePath, os.ModePerm); err != nil {
-			return nil, errors.New("failed to create save directory.")
+			return nil, errors.New("failed to create save directory")
 		}
 	}
 	if upload.CheckPermission(uploadSavePath) {
-		return nil, errors.New("insufficient file permissions.")
+		return nil, errors.New("insufficient file permissions")
 	}
 
 	dst := uploadSavePath + "/" + fileName
@@ -40,7 +40,7 @@ func (s *Service) UploadFile(file multipart.File, fileHeader *multipart.FileHead
 	}
 
 	if upload.CheckMIME(dst, fileType) == false {
-		return nil, errors.New("file MIME is not supported.")
+		return nil, errors.New("file MIME is not supported")
 	}
 
 	if upload.CheckMaxSizeOnServer(dst, fileType) == false {
