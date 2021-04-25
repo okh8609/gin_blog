@@ -1,7 +1,7 @@
 package app
 
 import "github.com/gin-gonic/gin"
-import "github.com/okh8609/gin_blog/pkg/convert"
+import "github.com/okh8609/gin_blog/pkg/utils"
 import "github.com/okh8609/gin_blog/global"
 
 type Pager struct {
@@ -14,7 +14,7 @@ type Pager struct {
 }
 
 func GetPage(c *gin.Context) int { // 第幾頁?
-	page := convert.StrMust2Int(c.Query("page"))
+	page := utils.StrMust2Int(c.Query("page"))
 	if page <= 0 {
 		return 1
 	}
@@ -23,7 +23,7 @@ func GetPage(c *gin.Context) int { // 第幾頁?
 }
 
 func GetPageSize(c *gin.Context) int { // 每頁有幾筆資料?
-	pageSize := convert.StrMust2Int(c.Query("page_size"))
+	pageSize := utils.StrMust2Int(c.Query("page_size"))
 	if pageSize <= 0 {
 		return global.App.DefaultPageSize
 	}

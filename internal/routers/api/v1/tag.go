@@ -5,9 +5,8 @@ import (
 	"github.com/okh8609/gin_blog/global"
 	"github.com/okh8609/gin_blog/internal/service"
 	"github.com/okh8609/gin_blog/pkg/app"
-	"github.com/okh8609/gin_blog/pkg/convert"
 	"github.com/okh8609/gin_blog/pkg/errcode"
-	"github.com/okh8609/gin_blog/pkg/validation"
+	"github.com/okh8609/gin_blog/pkg/utils"
 )
 
 type Tag struct{}
@@ -31,7 +30,7 @@ func (t *Tag) Get(c *gin.Context) {}
 func (t *Tag) List(c *gin.Context) {
 
 	param := service.GetTagsParam{}
-	ok, verrs := validation.BindAndValid(c, &param)
+	ok, verrs := utils.BindAndValid(c, &param)
 	response := app.NewGResponse(c)
 	if !ok {
 		global.MyLogger.Errorf(c, "app.BindAndValid errs: %v", verrs.Error())
@@ -69,7 +68,7 @@ func (t *Tag) List(c *gin.Context) {
 func (t *Tag) Create(c *gin.Context) {
 	param := service.CreateTagParam{}
 	response := app.NewGResponse(c)
-	valid, errs := validation.BindAndValid(c, &param)
+	valid, errs := utils.BindAndValid(c, &param)
 	if !valid {
 		global.MyLogger.Errorf(c, "app.BindAndValid errs: %v", errs)
 		response.SendErrResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
@@ -98,9 +97,9 @@ func (t *Tag) Create(c *gin.Context) {
 // @Failure 500 {object} errcode.Error "內部錯誤"
 // @Router /api/v1/tags/{id} [put]
 func (t *Tag) Update(c *gin.Context) {
-	param := service.UpdateTagParam{ID: convert.StrMust2UInt(c.Param("id"))}
+	param := service.UpdateTagParam{ID: utils.StrMust2UInt(c.Param("id"))}
 	response := app.NewGResponse(c)
-	valid, errs := validation.BindAndValid(c, &param)
+	valid, errs := utils.BindAndValid(c, &param)
 	if !valid {
 		global.MyLogger.Errorf(c, "app.BindAndValid errs: %v", errs)
 		response.SendErrResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
@@ -126,9 +125,9 @@ func (t *Tag) Update(c *gin.Context) {
 // @Failure 500 {object} errcode.Error "內部錯誤"
 // @Router /api/v1/tags/{id} [delete]
 func (t *Tag) Delete(c *gin.Context) {
-	param := service.DeleteTagParam{ID: convert.StrMust2UInt(c.Param("id"))}
+	param := service.DeleteTagParam{ID: utils.StrMust2UInt(c.Param("id"))}
 	response := app.NewGResponse(c)
-	valid, errs := validation.BindAndValid(c, &param)
+	valid, errs := utils.BindAndValid(c, &param)
 	if !valid {
 		global.MyLogger.Errorf(c, "app.BindAndValid errs: %v", errs)
 		response.SendErrResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
