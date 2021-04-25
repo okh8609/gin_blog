@@ -555,6 +555,58 @@ var doc = `{
                     }
                 }
             }
+        },
+        "/upload/file": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "上傳檔案",
+                "parameters": [
+                    {
+                        "description": "檔案路徑",
+                        "name": "file",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "enum": [
+                            1,
+                            2
+                        ],
+                        "description": "檔案類型[1:ImageFile(.jpg .gif .png), 2:DocFile(.pdf)]",
+                        "name": "type",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功  {\"file_access_url\": XXX}  ",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "請求錯誤",
+                        "schema": {
+                            "$ref": "#/definitions/errcode.Error"
+                        }
+                    },
+                    "500": {
+                        "description": "內部錯誤",
+                        "schema": {
+                            "$ref": "#/definitions/errcode.Error"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {

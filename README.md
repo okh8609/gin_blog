@@ -16,4 +16,7 @@ curl -X GET "http://localhost:8080/api/v1/tags?state=1&page=1&page_size=2" -H "a
 curl -X PUT "http://localhost:8080/api/v1/tags/1" -F 'state=0' -F 'modified_by=khaos2'
 
 curl -X DELETE "http://localhost:8080/api/v1/tags/2" -H "accept: application/json"
+
+curl -X POST "http://localhost:8080/upload/file" -F "type=1" -F "file=@/home/kh/img_gin.png"
+
 ```

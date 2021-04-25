@@ -1,11 +1,16 @@
 package routers
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	// "github.com/okh8609/gin_blog/internal/middleware"
+	"github.com/okh8609/gin_blog/internal/routers/api"
 	v1 "github.com/okh8609/gin_blog/internal/routers/api/v1"
+	"github.com/okh8609/gin_blog/pkg/upload"
 
 	_ "github.com/okh8609/gin_blog/docs"
+	"github.com/okh8609/gin_blog/global"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
@@ -34,6 +39,9 @@ func NewRouter() *gin.Engine {
 	engine_group_api_v1.PATCH("/articles/:id/state", article.Update)
 	engine_group_api_v1.GET("/articles/:id", article.Get)
 	engine_group_api_v1.GET("/articles", article.List)
+
+	engine.POST("/upload/file", api.UploadFile)
+	engine.StaticFS(upload.GetServerUrl(), http.Dir(global.App.UploadSavePath))
 
 	return engine
 }

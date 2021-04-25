@@ -11,6 +11,24 @@ App:
   LogSavePath: storage/logs
   LogFileName: app
   LogFileExt: .log
+  UploadSavePath: storage/uploads
+  UploadServerUrl: /static
+  UploadImageMaxSize: 5  # MB  -- Web Server也要檔！
+  UploadImageAllowExts:
+    - .jpg
+    - .jpeg
+    - .png
+    - .gif
+  UploadImageAllowMIME:
+    - image/jpeg
+    - image/jpg
+    - image/gif
+    - image/png
+  UploadDocMaxSize: 20  # MB
+  UploadDocAllowExts:
+    - .pdf
+  UploadDocAllowMIME:
+    - application/pdf
 Database:
   DBType: mysql
   UserName: kh

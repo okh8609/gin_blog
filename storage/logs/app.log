@@ -206,3 +206,84 @@
 2021/04/25 00:52:37 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619283157406259626}
 2021/04/25 00:55:27 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"app.BindAndValid errs: ","time":1619283327711575727}
 2021/04/25 00:59:32 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619283572248527354}
+2021/04/25 10:24:00 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619317440383659814}
+2021/04/25 14:23:39 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619331819363168141}
+2021/04/25 14:32:55 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619332375538467404}
+2021/04/25 14:33:00 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619332380771734928}
+2021/04/25 14:33:17 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"app.BindAndValid errs: Key: 'GetTagsParam.Name' Error:Field validation for 'Name' failed on the 'max' tag, Key: 'GetTagsParam.State' Error:Field validation for 'State' failed on the 'oneof' tag","time":1619332397824875084}
+2021/04/25 14:41:34 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619332894529205295}
+2021/04/25 14:41:34 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/b814fdd517caf1934febee51ed868fff.png; Type: image/png","time":1619332894529552598}
+2021/04/25 14:41:34 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619332894529625299}
+2021/04/25 14:41:34 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"service.UploadFile err: exceeded maximum file limit.(2)","time":1619332894529657499}
+2021/04/25 14:43:52 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619333032041241815}
+2021/04/25 14:43:54 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619333034884204788}
+2021/04/25 14:43:54 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/b814fdd517caf1934febee51ed868fff.png; Type: image/png","time":1619333034884684893}
+2021/04/25 14:44:01 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619333041619168123}
+2021/04/25 14:44:38 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619333078194226611}
+2021/04/25 14:45:25 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619333125751793701}
+2021/04/25 14:47:13 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619333233927899548}
+2021/04/25 14:47:17 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619333237767784910}
+2021/04/25 14:47:17 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/b814fdd517caf1934febee51ed868fff.png; Type: image/png","time":1619333237768255815}
+2021/04/25 14:47:17 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619333237768324015}
+2021/04/25 14:47:41 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619333261237431201}
+2021/04/25 14:47:41 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/b814fdd517caf1934febee51ed868fff.png; Type: image/png","time":1619333261237871106}
+2021/04/25 14:47:41 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619333261237969907}
+2021/04/25 14:47:44 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619333264398733959}
+2021/04/25 14:47:44 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/b814fdd517caf1934febee51ed868fff.png; Type: image/png","time":1619333264399591968}
+2021/04/25 14:47:44 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619333264399675669}
+2021/04/25 14:47:46 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619333266202976714}
+2021/04/25 14:47:46 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/b814fdd517caf1934febee51ed868fff.png; Type: image/png","time":1619333266203417718}
+2021/04/25 14:47:46 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619333266203485019}
+2021/04/25 14:47:57 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619333277944040696}
+2021/04/25 14:47:57 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/c4ad6a2c6f55a9b749f0095d2b6c2dc3.png; Type: image/png","time":1619333277944318599}
+2021/04/25 14:47:57 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619333277944390800}
+2021/04/25 14:49:20 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"service.UploadFile err: file extension not supported.","time":1619333360057954541}
+2021/04/25 14:50:08 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 3 MB","time":1619333408573424489}
+2021/04/25 14:50:08 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/f561aaf6ef0bf14d4208bb46a4ccb3ad.jpg; Type: application/zip","time":1619333408578394241}
+2021/04/25 14:50:08 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"service.UploadFile err: file MIME is not supported.","time":1619333408578492442}
+2021/04/25 15:00:49 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619334049420405768}
+2021/04/25 15:00:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 3 MB","time":1619334053050934926}
+2021/04/25 15:00:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/1619334053f561aaf6ef0bf14d.jpg; Type: application/zip","time":1619334053055892186}
+2021/04/25 15:00:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"service.UploadFile err: file MIME is not supported.","time":1619334053055983987}
+2021/04/25 15:01:04 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619334064133415506}
+2021/04/25 15:01:04 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/1619334064c4ad6a2c6f55a9b7.png; Type: image/png","time":1619334064133692310}
+2021/04/25 15:01:04 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619334064133768911}
+2021/04/25 15:01:28 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619334088363850259}
+2021/04/25 15:01:32 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619334092191840355}
+2021/04/25 15:01:32 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/1619334092_c4ad6a2c6f55a9b7.png; Type: image/png","time":1619334092192083358}
+2021/04/25 15:01:32 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619334092192162759}
+2021/04/25 15:01:35 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619334095789742183}
+2021/04/25 15:01:35 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/1619334095_c4ad6a2c6f55a9b7.png; Type: image/png","time":1619334095790067686}
+2021/04/25 15:01:35 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619334095790147487}
+2021/04/25 15:01:36 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619334096800187505}
+2021/04/25 15:01:36 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/1619334096_c4ad6a2c6f55a9b7.png; Type: image/png","time":1619334096800410908}
+2021/04/25 15:01:36 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619334096800457509}
+2021/04/25 15:01:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619334113600252989}
+2021/04/25 15:01:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/1619334113_c4ad6a2c6f55a9b7.png; Type: image/png","time":1619334113600499892}
+2021/04/25 15:01:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619334113600531192}
+2021/04/25 15:02:20 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619334140866811896}
+2021/04/25 15:02:20 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/1619334140_c4ad6a2c6f55a9b7.png; Type: image/png","time":1619334140867129000}
+2021/04/25 15:02:20 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619334140867207801}
+2021/04/25 15:03:16 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 0 MB","time":1619334196470781908}
+2021/04/25 15:03:16 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/1619334196_c4ad6a2c6f55a9b7.png; Type: image/png","time":1619334196471059911}
+2021/04/25 15:03:16 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 0 MB","time":1619334196471128712}
+2021/04/25 15:07:34 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 6 MB","time":1619334454897458610}
+2021/04/25 15:07:34 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"service.UploadFile err: exceeded maximum file limit.","time":1619334454897570711}
+2021/04/25 15:10:06 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619334606448219702}
+2021/04/25 15:10:12 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 7093207 #","time":1619334612981777075}
+2021/04/25 15:10:12 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"error","message":"service.UploadFile err: exceeded maximum file limit.","time":1619334612981921976}
+2021/04/25 15:10:17 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 8496 #","time":1619334617635940050}
+2021/04/25 15:10:17 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/1619334617_c4ad6a2c6f55a9b7.png; Type: image/png","time":1619334617636186153}
+2021/04/25 15:10:17 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 8496 #","time":1619334617636266054}
+2021/04/25 15:12:41 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619334761070927732}
+2021/04/25 15:12:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 87064 Bytes.#","time":1619334773269828863}
+2021/04/25 15:12:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/1619334773_b814fdd517caf193.png; Type: image/png","time":1619334773270104066}
+2021/04/25 15:12:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 87064 Bytes.#","time":1619334773270205467}
+2021/04/25 15:30:51 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619335851299060913}
+2021/04/25 15:30:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 87064 Bytes.#","time":1619335853658183519}
+2021/04/25 15:30:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/1619335853_b814fdd517caf193.png; Type: image/png","time":1619335853658455722}
+2021/04/25 15:30:53 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 87064 Bytes.#","time":1619335853658499423}
+2021/04/25 15:37:33 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1619336253926725480}
+2021/04/25 15:37:41 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# multipart.FileHeader.Size = 87064 Bytes.#","time":1619336261110402460}
+2021/04/25 15:37:41 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"info","message":"Path: storage/uploads/1619336261_b814fdd517caf193.png; Type: image/png","time":1619336261110706163}
+2021/04/25 15:37:41 {"caller":["/home/kh/okh8609/gin_blog/main.go: 27 main.init.0"],"level":"debug","message":"# CheckMaxSizeOnServer() f.Size = 87064 Bytes.#","time":1619336261110766064}

@@ -20,6 +20,15 @@ type AppSetting struct {
 	LogSavePath     string `yaml:"LogSavePath"`
 	LogFileName     string `yaml:"LogFileName"`
 	LogFileExt      string `yaml:"LogFileExt"`
+
+	UploadSavePath       string   `yaml:"UploadSavePath"`
+	UploadServerUrl      string   `yaml:"UploadServerUrl"`
+	UploadImageMaxSize   int64    `yaml:"UploadImageMaxSize"`
+	UploadImageAllowMIME []string `yaml:"UploadImageAllowMIME"`
+	UploadImageAllowExts []string `yaml:"UploadImageAllowExts"`
+	UploadDocMaxSize     int64    `yaml:"UploadDocMaxSize"`
+	UploadDocAllowMIME   []string `yaml:"UploadDocAllowMIME"`
+	UploadDocAllowExts   []string `yaml:"UploadDocAllowExts"`
 }
 
 // Database
