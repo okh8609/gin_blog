@@ -17,7 +17,11 @@ import (
 
 func NewRouter() *gin.Engine {
 	engine := gin.New()
-	engine.Use(gin.Logger(), gin.Recovery())
+	if global.Server.RunMode == "debug" {
+		engine.Use(gin.Logger(), gin.Recovery())
+	} else {
+		engine.Use(middleware.AccessLog, gin.Recovery())
+	}
 	// engine.Use(middleware.TranslationMiddleware)
 
 	url := ginSwagger.URL("http://kh-vm20:8080/swagger/doc.json") // The url pointing to API definition
