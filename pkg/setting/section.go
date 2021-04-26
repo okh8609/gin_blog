@@ -52,3 +52,14 @@ type Auth struct {
 	JWTexp     int    `yaml:"JWTexp"` 
 	PBKDF2salt string `yaml:"PBKDF2salt"`
 }
+
+// Email
+type Email struct {
+	Host     string   `yaml:"Host"`
+	Port     int      `yaml:"Port"`
+	UserName string   `yaml:"UserName"`
+	Password string   `yaml:"Password"`
+	IsSSL    bool     `yaml:"IsSSL"`
+	From     string   `yaml:"From"`
+	To       []string `yaml:"To"`
+}

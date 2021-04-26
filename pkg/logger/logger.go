@@ -106,8 +106,22 @@ func (l *MyLogger) WithCaller(skip int) *MyLogger {
 
 func (l *MyLogger) WithCallerFrame() *MyLogger {
 	// 設定目前 `整個呼叫` 的堆疊資訊
-	// --- pass ---
-	return &MyLogger{}
+	maxCallerDepth := 25
+	minCallerDepth := 1
+	caller := []string{}
+	pcs := make([]uintptr, maxCallerDepth)
+	depth := runtime.Callers(minCallerDepth, pcs)
+	frames := runtime.CallersFrames(pcs[:depth])
+	for frame, more := frames.Next(); more; frame, more = frames.Next() {
+		s := fmt.Sprintf("%s: %d %s", frame.File, frame.Line, frame.Function)
+		caller = append(caller, s)
+		if !more {
+			break
+		}
+	}
+	l2 := l.clone()
+	l2.caller = caller
+	return l2
 }
 
 func (l *MyLogger) WithGinContext() *MyLogger {

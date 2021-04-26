@@ -1,6 +1,6 @@
+# TODO: Please fill in the appropriate information and rename this file as "config.yaml"
 ---
 Server:
-  # RunMode: debug
   RunMode: release
   HttpPort: 8080
   ReadTimeout: 60
@@ -32,8 +32,8 @@ App:
     - application/pdf
 Database:
   DBType: mysql
-  UserName: kh
-  Password: 1234
+  UserName: # aaa - db username
+  Password: # aaa123 - db password
   Host: 127.0.0.1:3306
   DBName: gin_blog
   TablePrefix: blog_
@@ -42,8 +42,18 @@ Database:
   MaxIdleConns: 10
   MaxOpenConns: 30
 Auth:
-  PBKDF2salt: kGQcnzo5vfuJrnBhpc6V1EP7fAxqDI5Z
-  JWTkey: 2M4o6UNzYD1qS9L1OXzskkusH3QIYyV1
+  PBKDF2salt: # abc000111222333abc99988877ABC - Please generate a random number as the key
+  JWTkey: # abcGGG99988877ABC111222333abc - Please generate a random number as the key
   JWTiss: khaos
   JWTexp: 600000 # 大約七天
+Email:
+  Host: smtp.gmail.com
+  Port: 587 # 465
+  From: # xxx@gmail.com
+  UserName: # xxx@gmail.com
+  Password: # pppppppp
+  IsSSL: true
+  To:
+    - # yyy@gmail.com
+    - # zzz@ntu.edu.tw
 ...

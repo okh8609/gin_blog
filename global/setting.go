@@ -7,4 +7,5 @@ var (
 	App      *setting.AppSetting
 	Database *setting.DatabaseSetting
 	Auth     *setting.Auth
+	Email    *setting.Email
 )

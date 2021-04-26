@@ -20,7 +20,7 @@ func NewRouter() *gin.Engine {
 	if global.Server.RunMode == "debug" {
 		engine.Use(gin.Logger(), gin.Recovery())
 	} else {
-		engine.Use(middleware.AccessLog, gin.Recovery())
+		engine.Use(middleware.AccessLog, middleware.Recovery)
 	}
 	// engine.Use(middleware.TranslationMiddleware)
 
@@ -52,6 +52,8 @@ func NewRouter() *gin.Engine {
 	engine.POST("/auth/verify", api.VerifyAuth)
 	engine.PUT("/auth", api.UpdateAuth)
 	engine.DELETE("/auth", api.DeleteAuth)
+
+	engine.GET("panic", func(c *gin.Context) { panic("??") })
 
 	return engine
 }
