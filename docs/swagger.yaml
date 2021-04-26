@@ -447,6 +447,13 @@ paths:
         required: true
         schema:
           type: string
+      - description: 密碼
+        in: body
+        maxLength: 255
+        name: password
+        required: true
+        schema:
+          type: string
       produces:
       - application/json
       responses:
@@ -472,10 +479,17 @@ paths:
         required: true
         schema:
           type: string
-      - description: 密碼
+      - description: 舊密碼
         in: body
         maxLength: 255
         name: password
+        required: true
+        schema:
+          type: string
+      - description: 新密碼
+        in: body
+        maxLength: 255
+        name: new_password
         required: true
         schema:
           type: string

@@ -11,11 +11,12 @@ type VerifyAuthParam struct {
 }
 
 type UpdateAuthParam struct {
-	UUID     string `form:"uuid" binding:"max=255"`
-	Password string `form:"password" binding:"max=255"`
+	UUID        string `form:"uuid" binding:"max=255"`
+	Password    string `form:"password" binding:"max=255"`
+	NewPassword string `form:"new_password" binding:"max=255"`
 }
 
 type DeleteAuthParam struct {
-	// TODO
-	UUID string `form:"uuid" binding:"max=255"`
+	UUID     string `form:"uuid" binding:"max=255"`
+	Password string `form:"password" binding:"max=255"`
 }

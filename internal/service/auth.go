@@ -30,13 +30,23 @@ func (s *Service) VerifyAuth(param *VerifyAuthParam) (string, error) {
 }
 
 func (s *Service) UpdateAuth(param *UpdateAuthParam) error {
-	//TODO: 密碼要驗過!!
-
-	return s.dao.UpdateAuth(param.UUID, utils.HashPassword(param.Password))
+	auth, err := s.dao.GetAuth(param.UUID)
+	if err != nil {
+		return err
+	}
+	if auth.Password != utils.HashPassword(param.Password) {
+		return errors.New("wrong password")
+	}
+	return s.dao.UpdateAuth(param.UUID, utils.HashPassword(param.NewPassword))
 }
 
 func (s *Service) DeleteAuth(param *DeleteAuthParam) error {
-	//TODO: 密碼要驗過!!
-
+	auth, err := s.dao.GetAuth(param.UUID)
+	if err != nil {
+		return err
+	}
+	if auth.Password != utils.HashPassword(param.Password) {
+		return errors.New("wrong password")
+	}
 	return s.dao.DeleteAuth(param.UUID)
 }

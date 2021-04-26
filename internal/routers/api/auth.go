@@ -79,15 +79,17 @@ func VerifyAuth(c *gin.Context) {
 // @Summary 更新使用者
 // @Produce  json
 // @Param uuid body string true "UUID或使用者名稱" maxlength(255)
-// @Param password body string true "密碼" maxlength(255)
+// @Param password body string true "舊密碼" maxlength(255)
+// @Param new_password body string true "新密碼" maxlength(255)
 // @Success 200 {object} string "成功"
 // @Failure 400 {object} errcode.Error "請求錯誤"
 // @Failure 500 {object} errcode.Error "內部錯誤"
 // @Router /auth [put]
 func UpdateAuth(c *gin.Context) {
 	param := service.UpdateAuthParam{
-		UUID:     c.Param("uuid"),
-		Password: c.Param("password"),
+		UUID:        c.Param("uuid"),
+		Password:    c.Param("password"),
+		NewPassword: c.Param("new_password"),
 	}
 	response := app.NewGResponse(c)
 	valid, errs := utils.BindAndValid(c, &param)
@@ -111,13 +113,15 @@ func UpdateAuth(c *gin.Context) {
 // @Summary 刪除使用者
 // @Produce  json
 // @Param uuid body string true "UUID或使用者名稱" maxlength(255)
+// @Param password body string true "密碼" maxlength(255)
 // @Success 200 {object} string "成功"
 // @Failure 400 {object} errcode.Error "請求錯誤"
 // @Failure 500 {object} errcode.Error "內部錯誤"
 // @Router /auth [delete]
 func DeleteAuth(c *gin.Context) {
 	param := service.DeleteAuthParam{
-		UUID: c.Param("uuid"),
+		UUID:     c.Param("uuid"),
+		Password: c.Param("password"),
 	}
 	response := app.NewGResponse(c)
 	valid, errs := utils.BindAndValid(c, &param)

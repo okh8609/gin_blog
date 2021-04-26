@@ -575,8 +575,18 @@ var doc = `{
                     },
                     {
                         "maxLength": 255,
-                        "description": "密碼",
+                        "description": "舊密碼",
                         "name": "password",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "maxLength": 255,
+                        "description": "新密碼",
+                        "name": "new_password",
                         "in": "body",
                         "required": true,
                         "schema": {
@@ -615,6 +625,16 @@ var doc = `{
                         "maxLength": 255,
                         "description": "UUID或使用者名稱",
                         "name": "uuid",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "maxLength": 255,
+                        "description": "密碼",
+                        "name": "password",
                         "in": "body",
                         "required": true,
                         "schema": {
