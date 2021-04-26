@@ -4,13 +4,13 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	// "github.com/okh8609/gin_blog/internal/middleware"
+	"github.com/okh8609/gin_blog/global"
+	"github.com/okh8609/gin_blog/internal/middleware"
 	"github.com/okh8609/gin_blog/internal/routers/api"
 	v1 "github.com/okh8609/gin_blog/internal/routers/api/v1"
 	"github.com/okh8609/gin_blog/pkg/upload"
 
 	_ "github.com/okh8609/gin_blog/docs"
-	"github.com/okh8609/gin_blog/global"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
@@ -26,6 +26,7 @@ func NewRouter() *gin.Engine {
 	tag := v1.NewTag()
 	article := v1.NewArticle()
 	engine_group_api_v1 := engine.Group("/api/v1")
+	engine_group_api_v1.Use(middleware.JWTMiddleware)
 
 	engine_group_api_v1.POST("/tags", tag.Create)
 	engine_group_api_v1.DELETE("/tags/:id", tag.Delete)

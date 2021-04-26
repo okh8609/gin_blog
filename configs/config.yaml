@@ -42,7 +42,7 @@ Database:
   MaxOpenConns: 30
 Auth:
   PBKDF2salt: kGQcnzo5vfuJrnBhpc6V1EP7fAxqDI5Z
-  JWTkey: 2M4o6UNzYD1qSCL1OXzskkusH3QIYyV1
+  JWTkey: 2M4o6UNzYD1qS9L1OXzskkusH3QIYyV1
   JWTiss: khaos
   JWTexp: 600000 # 大約七天
 ...
