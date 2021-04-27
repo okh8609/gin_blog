@@ -38,6 +38,7 @@ func NewRouter() *gin.Engine {
 		engine.Use(middleware.AccessLog, middleware.Recovery)
 	}
 	engine.Use(middleware.RateLimiter(myLimiter))
+	engine.Use(middleware.ContextTimeout(global.App.DefaultContextTimeout * time.Second))
 	// engine.Use(middleware.TranslationMiddleware)
 
 	url := ginSwagger.URL("http://kh-vm20:8080/swagger/doc.json") // The url pointing to API definition

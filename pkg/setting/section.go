@@ -15,11 +15,12 @@ type ServerSetting struct {
 
 // App
 type AppSetting struct {
-	DefaultPageSize int    `yaml:"DefaultPageSize"`
-	MaxPageSize     int    `yaml:"MaxPageSize"`
-	LogSavePath     string `yaml:"LogSavePath"`
-	LogFileName     string `yaml:"LogFileName"`
-	LogFileExt      string `yaml:"LogFileExt"`
+	DefaultContextTimeout time.Duration `yaml:"DefaultContextTimeout"`
+	DefaultPageSize       int           `yaml:"DefaultPageSize"`
+	MaxPageSize           int           `yaml:"MaxPageSize"`
+	LogSavePath           string        `yaml:"LogSavePath"`
+	LogFileName           string        `yaml:"LogFileName"`
+	LogFileExt            string        `yaml:"LogFileExt"`
 
 	UploadSavePath       string   `yaml:"UploadSavePath"`
 	UploadServerUrl      string   `yaml:"UploadServerUrl"`
@@ -49,7 +50,7 @@ type DatabaseSetting struct {
 type Auth struct {
 	JWTkey     string `yaml:"JWTkey"`
 	JWTiss     string `yaml:"JWTiss"`
-	JWTexp     int    `yaml:"JWTexp"` 
+	JWTexp     int    `yaml:"JWTexp"`
 	PBKDF2salt string `yaml:"PBKDF2salt"`
 }
 
