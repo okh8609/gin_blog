@@ -16,7 +16,7 @@ import (
 // @Success 200 {object} string "成功"
 // @Failure 400 {object} errcode.Error "請求錯誤"
 // @Failure 500 {object} errcode.Error "內部錯誤"
-// @Router /auth/new [post]
+// @Router /auth [post]
 func CreateAuth(c *gin.Context) {
 	param := service.CreateAuthParam{}
 	response := app.NewGResponse(c)

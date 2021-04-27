@@ -615,11 +615,11 @@ var doc = `{
                     }
                 }
             },
-            "delete": {
+            "post": {
                 "produces": [
                     "application/json"
                 ],
-                "summary": "刪除使用者",
+                "summary": "新增使用者",
                 "parameters": [
                     {
                         "maxLength": 255,
@@ -662,14 +662,12 @@ var doc = `{
                         }
                     }
                 }
-            }
-        },
-        "/auth/new": {
-            "post": {
+            },
+            "delete": {
                 "produces": [
                     "application/json"
                 ],
-                "summary": "新增使用者",
+                "summary": "刪除使用者",
                 "parameters": [
                     {
                         "maxLength": 255,
