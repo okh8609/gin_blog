@@ -124,9 +124,9 @@ func (l *MyLogger) WithCallerFrame() *MyLogger {
 	return l2
 }
 
-func (l *MyLogger) WithGinContext() *MyLogger {
-	return l // ?
+func (l *MyLogger) WithTrace() *MyLogger { // WithGinContext()
 	// 加入 *gin.Context 的資訊
+	// 加入 鏈路追蹤
 	ginContext, ok := l.contex.(*gin.Context) // 型態轉換(Type assertions)成 *gin.Context
 	if ok {                                   // 看看轉換有沒有成功
 		return l.WithField(Field{

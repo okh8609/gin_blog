@@ -7,6 +7,7 @@ import (
 	"github.com/okh8609/gin_blog/global"
 	"github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/ext"
+	"github.com/uber/jaeger-client-go"
 )
 
 func Tracing(c *gin.Context) {
@@ -38,6 +39,19 @@ func Tracing(c *gin.Context) {
 	}
 
 	defer span.Finish()
+
+	var traceID string
+	var spanID string
+	var jaegerSpanContext = span.Context()
+	switch jaegerSpanContext.(type) {
+	case jaeger.SpanContext:
+		jaegerContext:=jaegerSpanContext.(jaeger.SpanContext)
+		traceID = jaegerContext.TraceID().String()
+		spanID = jaegerContext.SpanID().String()
+	}
+
+	c.Set("X-Trace-ID",traceID)
+	c.Set("X-Span-ID",spanID)
 	c.Request = c.Request.WithContext(newContext)
 	c.Next()
 }
