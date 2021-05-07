@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/okh8609/gin_blog/pkg/setting"
+	// otgorm "github.com/okh8609/opentracing-gorm"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -39,6 +40,8 @@ func NewDBEngine(c *setting.DatabaseSetting) (*gorm.DB, error) {
 	// gormDB.Callback().Create().After("gorm:create").Register("time_stamp", createTimestampCallback)
 	// gormDB.Callback().Update().After("gorm:update").Register("time_stamp", updateTimestampCallback)
 	// gormDB.Callback().Delete().Replace("gorm:delete", deleteCallback)
+
+	// otgorm.AddGormCallbacks(gormDB)
 
 	return gormDB, nil
 }
