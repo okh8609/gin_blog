@@ -74,15 +74,15 @@ curl -X DELETE "http://localhost:8080/api/v1/tags/2" -H "accept: application/jso
 curl -X POST "http://localhost:8080/upload/file" -F "type=1" -F "file=@/home/kh/img_gin.png"
 
 # Auth (user)
-curl -X POST "http://localhost:8080/auth/new" -F 'uuid=7ee4e82c-e4e9-44fb-97d8-aeeeaa9d485f' -F 'password=AAA0809'
-curl -X POST "http://localhost:8080/auth/verify" -F 'uuid=7ee4e82c-e4e9-44fb-97d8-aeeeaa9d485f' -F 'password=AAA0808'
-curl -X POST "http://localhost:8080/auth/verify" -F 'uuid=7ee4e82c-e4e9-44fb-97d8-aeeeaa9d485f' -F 'password=AAA0809'
-curl -X PUT "http://localhost:8080/auth" -F 'uuid=7ee4e82c-e4e9-44fb-97d8-aeeeaa9d485f' -F 'password=AAA0800' -F 'new_password=AAA0808'
-curl -X PUT "http://localhost:8080/auth" -F 'uuid=7ee4e82c-e4e9-44fb-97d8-aeeeaa9d485f' -F 'password=AAA0809' -F 'new_password=AAA0808'
-curl -X POST "http://localhost:8080/auth/verify" -F 'uuid=7ee4e82c-e4e9-44fb-97d8-aeeeaa9d485f' -F 'password=AAA0809'
-curl -X POST "http://localhost:8080/auth/verify" -F 'uuid=7ee4e82c-e4e9-44fb-97d8-aeeeaa9d485f' -F 'password=AAA0808'
-curl -X DELETE "http://localhost:8080/auth" -F 'uuid=7ee4e82c-e4e9-44fb-97d8-aeeeaa9d485f'
-curl -X DELETE "http://localhost:8080/auth" -F 'uuid=7ee4e82c-e4e9-44fb-97d8-aeeeaa9d485f' -F 'password=AAA0808'
+curl -X POST "http://localhost:8080/auth" -F 'uuid=b4e063ff-b7c9-4264-87d6-f7750b61194b' -F 'password=AAA0809'
+curl -X POST "http://localhost:8080/auth/verify" -F 'uuid=b4e063ff-b7c9-4264-87d6-f7750b61194b' -F 'password=AAA0808'
+curl -X POST "http://localhost:8080/auth/verify" -F 'uuid=b4e063ff-b7c9-4264-87d6-f7750b61194b' -F 'password=AAA0809'
+curl -X PUT "http://localhost:8080/auth" -F 'uuid=b4e063ff-b7c9-4264-87d6-f7750b61194b' -F 'password=AAA0800' -F 'new_password=AAA0808'
+curl -X PUT "http://localhost:8080/auth" -F 'uuid=b4e063ff-b7c9-4264-87d6-f7750b61194b' -F 'password=AAA0809' -F 'new_password=AAA0808'
+curl -X POST "http://localhost:8080/auth/verify" -F 'uuid=b4e063ff-b7c9-4264-87d6-f7750b61194b' -F 'password=AAA0809'
+curl -X POST "http://localhost:8080/auth/verify" -F 'uuid=b4e063ff-b7c9-4264-87d6-f7750b61194b' -F 'password=AAA0808'
+curl -X DELETE "http://localhost:8080/auth" -F 'uuid=b4e063ff-b7c9-4264-87d6-f7750b61194b'
+curl -X DELETE "http://localhost:8080/auth" -F 'uuid=b4e063ff-b7c9-4264-87d6-f7750b61194b' -F 'password=AAA0808'
 
 
 JWT_TOKEN="eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiYjRmMmIyNDEtNGFhYy00YzZmLWE0MDYtZGQyY2Y0YzMwM2Y1IiwiZXhwIjoxNjE5OTY2MjIyLCJpYXQiOjE2MTkzNjYyMjIsImlzcyI6ImtoYW9zIiwibmJmIjoxNjE5MzY2MjIyfQ.YnXLgvicNxvdLmDzhAvR4zX_uC6B1gNBs-IDYQLKBvUIftMGpgzTtT8pAuNNfl3air6mCNOx7DvBnJkLeH3_wA"
