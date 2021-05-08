@@ -2,8 +2,10 @@ package main
 
 import (
 	"context"
+	"flag"
 	"log"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -16,7 +18,13 @@ import (
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
+var httpPort string
+var runMode string
+var configPathes string
+
 func init() {
+	setupFlag()
+
 	err := setupSetting()
 	if err != nil {
 		log.Fatalf("init.setupSetting err: %v", err)
@@ -57,7 +65,7 @@ func main() {
 }
 
 func setupSetting() error {
-	setting, err := setting.NewSetting()
+	setting, err := setting.NewSetting(strings.Split(configPathes, ",")...)
 	if err != nil {
 		return err
 	}
@@ -87,7 +95,14 @@ func setupSetting() error {
 		return err
 	}
 
-	return err
+	if httpPort != "" {
+		global.Server.HttpPort = httpPort
+	}
+	if runMode != "" {
+		global.Server.RunMode = runMode
+	}
+
+	return nil
 }
 
 func setupDBEngine() error {
@@ -117,5 +132,13 @@ func setupTracer() error {
 		return err
 	}
 	global.Tracer = &jaegerTracer
+	return nil
+}
+
+func setupFlag() error {
+	flag.StringVar(&httpPort, "port", "8080", "啟動的通訊埠")
+	flag.StringVar(&runMode, "mode", "debug", "執行的模式 [debug | release]")
+	flag.StringVar(&configPathes, "cpath", "./configs/", "設定檔的尋找路徑")
+	flag.Parse()
 	return nil
 }
