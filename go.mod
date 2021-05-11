@@ -47,7 +47,7 @@ require (
 	go.uber.org/atomic v1.7.0 // indirect
 	golang.org/x/crypto v0.0.0-20210421170649-83a5a9bb288b // indirect
 	golang.org/x/net v0.0.0-20210421230115-4e50805a0758 // indirect
-	golang.org/x/sys v0.0.0-20210423082822-04245dca01da // indirect
+	golang.org/x/sys v0.0.0-20210510120138-977fb7262007 // indirect
 	golang.org/x/text v0.3.6 // indirect
 	golang.org/x/tools v0.1.0 // indirect
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect

@@ -1,36 +1,49 @@
 package setting
 
-import "github.com/spf13/viper"
+import (
+	"github.com/fsnotify/fsnotify"
+	"github.com/spf13/viper"
+)
 
 type Setting struct {
 	vp *viper.Viper
 }
 
-func NewSetting(configPathes ...string) (*Setting, error) {
-	v := viper.New()
-
-	//越前面加進去的越先採用
-	for _, path := range configPathes {
-		if path != "" {
-			v.AddConfigPath(path)
-		}
-	}
-	// v.AddConfigPath("configs/")
-	// v.AddConfigPath("../configs/")
-	// v.AddConfigPath("../../configs/")
-	// v.AddConfigPath(".")
-
-	v.SetConfigName("config")
-	v.SetConfigType("yaml")
-
-	err := v.ReadInConfig()
-	if err != nil {
-		return nil, err
-	}
-	return &Setting{vp: v}, nil
-}
+var allSection = make(map[string]interface{})
 
 func (s *Setting) ReadSection(k string, v interface{}) error {
 	err := s.vp.UnmarshalKey(k, v) // unmarshaling to a struct
-	return err
+	if err != nil {
+		return err
+	}
+
+	if _, ok := allSection[k]; !ok { // 如果沒紀錄過的話，就把指標紀錄起來
+		allSection[k] = v
+	}
+
+	return nil
+}
+
+func (s *Setting) ReloadAllSection() error {
+	for k, v := range allSection {
+		err := s.vp.UnmarshalKey(k, v) // unmarshaling to a struct
+		// fmt.Print(err)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (s *Setting) WatchConfigChange() error {
+	go func() {
+
+		s.vp.WatchConfig()
+		s.vp.OnConfigChange(func(in fsnotify.Event) {
+			s.ReloadAllSection()
+		})
+
+	}()
+
+	return nil
 }

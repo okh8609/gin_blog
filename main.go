@@ -65,32 +65,32 @@ func main() {
 }
 
 func setupSetting() error {
-	setting, err := setting.NewSetting(strings.Split(configPathes, ",")...)
+	ss, err := setting.NewSetting(strings.Split(configPathes, ",")...)
 	if err != nil {
 		return err
 	}
 
-	err = setting.ReadSection("Server", &global.Server)
+	err = ss.ReadSection("Server", &global.Server)
 	if err != nil {
 		return err
 	}
 
-	err = setting.ReadSection("App", &global.App)
+	err = ss.ReadSection("App", &global.App)
 	if err != nil {
 		return err
 	}
 
-	err = setting.ReadSection("Database", &global.Database)
+	err = ss.ReadSection("Database", &global.Database)
 	if err != nil {
 		return err
 	}
 
-	err = setting.ReadSection("Auth", &global.Auth)
+	err = ss.ReadSection("Auth", &global.Auth)
 	if err != nil {
 		return err
 	}
 
-	err = setting.ReadSection("Email", &global.Email)
+	err = ss.ReadSection("Email", &global.Email)
 	if err != nil {
 		return err
 	}
