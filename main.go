@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"flag"
+	"fmt"
 	"log"
 	"net/http"
 	"strings"
@@ -16,6 +17,14 @@ import (
 	"github.com/okh8609/gin_blog/pkg/setting"
 	"github.com/okh8609/gin_blog/pkg/tracer"
 	"gopkg.in/natefinch/lumberjack.v2"
+)
+
+var (
+	// go build -ldflags "-X main.buildTime=`date +%Y-%m-%d,%H:%M:%S` -X main.buildVersion=1.0.0 -X main.getCommitID=`git rev-parse HEAD`"
+	showVersion  bool
+	buildTime    string
+	buildVersion string
+	getCommitID  string
 )
 
 var httpPort string
@@ -50,6 +59,13 @@ func init() {
 // @contact.name Khaos_Ou
 // @host localhost:8080
 func main() {
+	if showVersion {
+		fmt.Printf("build_time: %s\n", buildTime)
+		fmt.Printf("build_version: %s\n", buildVersion)
+		fmt.Printf("git_commit_id: %s\n", getCommitID)
+		return
+	}
+
 	global.MyLogger.Infof(context.Background(), "%s: okh8609/%s", "Khaos", "gin_blog")
 	gin.SetMode(global.Server.RunMode)
 	engin := routers.NewRouter()
@@ -139,6 +155,7 @@ func setupFlag() error {
 	flag.StringVar(&httpPort, "port", "8080", "啟動的通訊埠")
 	flag.StringVar(&runMode, "mode", "debug", "執行的模式 [debug | release]")
 	flag.StringVar(&configPathes, "cpath", "./configs/", "設定檔的尋找路徑")
+	flag.BoolVar(&showVersion, "version", false, "編譯資訊")
 	flag.Parse()
 	return nil
 }

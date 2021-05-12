@@ -470,3 +470,13 @@
 2021/05/11 13:21:39 {"caller":["/home/kh/okh8609/gin_blog/main.go: 36 main.init.0"],"level":"debug","message":"# Auth: {b4e063ff-b7c9-4264-87d6-f7750b61194b K26he9fKMpp+u+tru8uRfSuAxDUBVtHQ364XPQZ4hiGrj3kRlgKOB8HNf2T5/nsKftP9F0m22iuy8T2z0OI1OECb41l+XdUfnD0EdhHarvAgzA5TbS35zmwSQko+NqXmTw8yAdGI3z8sMHfQs54CIilt+2A2A8b+N6a+Ys6roXU=}","time":1620710499882222825}
 2021/05/11 13:22:04 {"caller":["/home/kh/okh8609/gin_blog/main.go: 36 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1620710524381246254}
 2021/05/11 13:22:06 {"caller":["/home/kh/okh8609/gin_blog/main.go: 36 main.init.0"],"level":"debug","message":"# Auth: {b4e063ff-b7c9-4264-87d6-f7750b61194b K26he9fKMpp+u+tru8uRfSuAxDUBVtHQ364XPQZ4hiGrj3kRlgKOB8HNf2T5/nsKftP9F0m22iuy8T2z0OI1OECb41l+XdUfnD0EdhHarvAgzA5TbS35zmwSQko+NqXmTw8yAdGI3z8sMHfQs54CIilt+2A2A8b+N6a+Ys6roXU=}","time":1620710526986607139}
+2021/05/12 17:50:05 {"caller":["/home/kh/okh8609/gin_blog/main.go: 36 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1620813005329311581}
+2021/05/12 23:53:15 {"caller":["/home/kh/okh8609/gin_blog/main.go: 44 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1620834795406603325}
+2021/05/12 23:53:57 {"caller":["/home/kh/okh8609/gin_blog/main.go: 44 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1620834837637322321}
+2021/05/12 23:58:44 {"caller":["/home/kh/okh8609/gin_blog/main.go: 45 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1620835124181330314}
+2021/05/12 23:58:57 {"caller":["/home/kh/okh8609/gin_blog/main.go: 45 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1620835137461755908}
+2021/05/12 23:59:07 {"caller":["/home/kh/okh8609/gin_blog/main.go: 45 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1620835147518346756}
+2021/05/12 23:59:38 {"caller":["/home/kh/okh8609/gin_blog/main.go: 44 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1620835178579770177}
+2021/05/13 00:00:13 {"caller":["/home/kh/okh8609/gin_blog/main.go: 44 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1620835213014392207}
+2021/05/13 00:00:39 {"caller":["/home/kh/okh8609/gin_blog/main.go: 45 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1620835239835736634}
+2021/05/13 00:00:59 {"caller":["/home/kh/okh8609/gin_blog/main.go: 45 main.init.0"],"level":"info","message":"Khaos: okh8609/gin_blog","time":1620835259387460682}
