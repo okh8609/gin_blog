@@ -6,7 +6,10 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
+	"os/signal"
 	"strings"
+	"syscall"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -77,7 +80,26 @@ func main() {
 		WriteTimeout:   global.Server.WriteTimeout * time.Second,
 		MaxHeaderBytes: 1 << 20,
 	}
-	server.ListenAndServe()
+	// server.ListenAndServe()
+	go func() {
+		if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+			log.Fatalf("server.ListenAndServe err: %v", err)
+		}
+	}()
+
+	c := make(chan os.Signal)
+	signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)
+	<-c
+	log.Println("Shuting down server...")
+
+	cntx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	if err := server.Shutdown(cntx); err != nil {
+		log.Fatal("Server forced to shutdown:", err)
+	}
+
+	log.Println("Server exiting")
+
 }
 
 func setupSetting() error {
